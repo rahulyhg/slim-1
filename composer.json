@@ -1,7 +1,7 @@
 {
-    "name": "ivandokov/slim-skeleton",
+    "name": "ivandokov/slim",
     "description": "Slim Framework skeleton application",
-    "homepage": "http://github.com/ivandokov/slim-skeleton",
+    "homepage": "http://github.com/ivandokov/slim",
     "license": "MIT",
     "authors": [
         {
