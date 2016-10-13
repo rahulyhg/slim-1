@@ -1,0 +1,28 @@
+{
+    "name": "ivandokov/slim-skeleton",
+    "description": "Slim Framework skeleton application",
+    "homepage": "http://github.com/ivandokov/slim-skeleton",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ivan Dokov",
+            "homepage": "http://dokov.bg"
+        }
+    ],
+    "require": {
+        "php": ">=5.5.0",
+        "slim/slim": "^3.5",
+        "slim/twig-view": "^2.0",
+        "vlucas/phpdotenv": "^2.2",
+        "monolog/monolog": "^1.17",
+        "aura/session": "^2.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        },
+        "files": [
+            "helpers/env.php"
+        ]
+    }
+}
