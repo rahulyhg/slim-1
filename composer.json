@@ -3,6 +3,7 @@
     "description": "Slim Framework skeleton application",
     "homepage": "http://github.com/ivandokov/slim",
     "license": "MIT",
+    "type": "project",
     "authors": [
         {
             "name": "Ivan Dokov",
