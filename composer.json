@@ -30,5 +30,10 @@
         "post-root-package-install": [
             "php -r \"file_exists('.env') || copy('.env.example', '.env');\""
         ]
-    }
+    },
+    "config": {
+        "preferred-install": "dist"
+    },
+    "minimum-stability" : "dev",
+    "prefer-stable" : true
 }
