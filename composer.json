@@ -10,7 +10,8 @@
         "slim/twig-view": "^2.0",
         "vlucas/phpdotenv": "^2.2",
         "monolog/monolog": "^1.17",
-        "aura/session": "^2.1"
+        "aura/session": "^2.1",
+        "morris/lessql": "^0.3.4"
     },
     "autoload": {
         "psr-4": {
