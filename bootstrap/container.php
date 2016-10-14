@@ -1,8 +1,8 @@
 <?php
 $container = $app->getContainer();
 
-$container['errorHandler'] = function ($c) {
-    return function ($request, $response, $exception) use ($c) {
+$container['errorHandler'] = function ($container) {
+    return function ($request, $response, $exception) use ($container) {
         $message = sprintf(
             "Type: %s | Code: %s | Message: %s | File: %s:%s | Trace: %s",
             get_class($exception),
@@ -12,7 +12,7 @@ $container['errorHandler'] = function ($c) {
             $exception->getLine(),
             $exception->getTraceAsString()
         );
-        $c['logger']->error($message);
+        $container->logger->error($message);
 
         $handler = new Slim\Handlers\Error(env('DEBUG', true));
 
@@ -20,11 +20,11 @@ $container['errorHandler'] = function ($c) {
     };
 };
 
-$container['notFoundHandler'] = function ($c) {
-    return function ($request, $response) use ($c) {
+$container['notFoundHandler'] = function ($container) {
+    return function ($request, $response) use ($container) {
         $statusCode = 404;
         $response = $response->withStatus($statusCode);
-        return $c->view->render($response, 'error.twig', [
+        return $container->view->render($response, 'error.twig', [
             'title' => 'Page Not Found',
             'message' => "<p>The page you are looking for could not be found.</p>",
             'code' => $statusCode
@@ -32,13 +32,13 @@ $container['notFoundHandler'] = function ($c) {
     };
 };
 
-$container['notAllowedHandler'] = function ($c) {
-    return function ($request, $response, $methods) use ($c) {
+$container['notAllowedHandler'] = function ($container) {
+    return function ($request, $response, $methods) use ($container) {
         $statusCode = 405;
         $response = $response
             ->withStatus($statusCode)
             ->withHeader('Allow', implode(', ', $methods));
-        return $c->view->render($response, 'error.twig', [
+        return $container->view->render($response, 'error.twig', [
             'title' => 'Method not allowed',
             'message' => "<p>Method must be one of: " . implode(', ', $methods)  ."</p>",
             'code' => $statusCode
@@ -47,15 +47,15 @@ $container['notAllowedHandler'] = function ($c) {
 };
 
 /** @var Slim\Views\Twig */
-$container['view'] = function ($c) {
+$container['view'] = function ($container) {
     $view = new Slim\Views\Twig(__DIR__ . '/../app/Views/', [
         'cache' => __DIR__ . '/../tmp/views/',
         'debug' => env('DEBUG')
     ]);
 
     // Instantiate and add Slim specific extension
-    $basePath = rtrim(str_ireplace('index.php', '', $c['request']->getUri()->getBasePath()), '/');
-    $view->addExtension(new Slim\Views\TwigExtension($c['router'], $basePath));
+    $basePath = rtrim(str_ireplace('index.php', '', $container->request->getUri()->getBasePath()), '/');
+    $view->addExtension(new Slim\Views\TwigExtension($container->router, $basePath));
     $view->addExtension(new Twig_Extension_Debug());
     $view->addExtension(new App\Slim\TwigExtension());
     $view->getLoader()->addPath(realpath(__DIR__ . '/../public'));
