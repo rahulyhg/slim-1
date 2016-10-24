@@ -11,13 +11,15 @@
         "vlucas/phpdotenv": "^2.2",
         "monolog/monolog": "^1.17",
         "aura/session": "^2.1",
-        "morris/lessql": "^0.3.4"
+        "morris/lessql": "^0.3.4",
+        "symfony/var-dumper": "^3.1"
     },
     "autoload": {
         "psr-4": {
             "App\\": "app/"
         },
         "files": [
+            "helpers/dd.php",
             "helpers/env.php"
         ]
     },
