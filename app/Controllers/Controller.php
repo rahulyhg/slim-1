@@ -60,6 +60,9 @@ class Controller
      */
     protected function render($template)
     {
+        $ext = '.twig';
+        $template = substr($template, -strlen($ext)) === $ext ? $template : $template . $ext;
+
         return $this->container->view->render($this->response, $template, $this->getData());
     }
 
