@@ -49,7 +49,7 @@ $container['notAllowedHandler'] = function ($container) {
 /** @var Slim\Views\Twig */
 $container['view'] = function ($container) {
     $view = new Slim\Views\Twig(__DIR__ . '/../app/Views/', [
-        'cache' => __DIR__ . '/../tmp/views/',
+        'cache' => env('ENV') == 'local' ? false : __DIR__ . '/../tmp/views/',
         'debug' => env('DEBUG')
     ]);
 
