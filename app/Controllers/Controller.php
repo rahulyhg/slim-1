@@ -35,6 +35,16 @@ class Controller
     }
 
     /**
+     * @param $value
+     */
+    public function __get($value)
+    {
+        if ($this->container->{$value}) {
+            return $this->container->{$value};
+        }
+    }
+
+    /**
      * @param ServerRequestInterface $request
      * @return $this
      */
