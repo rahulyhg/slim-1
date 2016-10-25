@@ -83,3 +83,7 @@ $container['db'] = function () {
     $pass = env('DB_PASS');
     return new LessQL\Database(new PDO($dns, $user, $pass));
 };
+
+$container['IndexController'] = function ($container) {
+    return new \App\Controllers\IndexController($container);
+};
