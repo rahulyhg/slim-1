@@ -56,8 +56,8 @@ $container['view'] = function ($container) {
     // Instantiate and add Slim specific extension
     $basePath = rtrim(str_ireplace('index.php', '', $container->request->getUri()->getBasePath()), '/');
     $view->addExtension(new Slim\Views\TwigExtension($container->router, $basePath));
-    $view->addExtension(new Twig_Extension_Debug());
-    $view->addExtension(new App\Slim\TwigExtension());
+    $view->addExtension(new Twig_Extension_Debug);
+    $view->addExtension(new App\Slim\TwigExtension);
     $view->getLoader()->addPath(realpath(__DIR__ . '/../public'));
 
     return $view;
@@ -71,9 +71,14 @@ $container['logger'] = function () {
     return $logger;
 };
 
-/** @var Aura\Session\Session */
+/** @var RKA\Session */
 $container['session'] = function () {
-    return (new \Aura\Session\SessionFactory)->newInstance($_COOKIE);
+    return new \RKA\Session;
+};
+
+/** @var Slim\Csrf\Guard */
+$container['csrf'] = function () {
+    return new \Slim\Csrf\Guard;
 };
 
 /** @var LessQL\Database */

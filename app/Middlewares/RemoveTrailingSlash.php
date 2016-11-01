@@ -8,7 +8,7 @@ use Psr\Http\Message\ResponseInterface;
  * Class RemoveTrailingSlash
  * Removes trailing slash from URL with permanent redirect (301)
  */
-class RemoveTrailingSlash
+class RemoveTrailingSlash extends Middleware
 {
     /**
      * Invoke middleware
