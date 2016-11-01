@@ -30,8 +30,6 @@ class Controller
     public function __construct(ContainerInterface $container)
     {
         $this->container = $container;
-
-        $this->registerGlobalViewData();
     }
 
     /**
@@ -105,13 +103,5 @@ class Controller
         }
 
         return $this;
-    }
-
-    /**
-     * Global templates data
-     */
-    private function registerGlobalViewData()
-    {
-//        $this->setData('csrf', $this->container->session->getCsrfToken()->getValue());
     }
 }
