@@ -8,7 +8,7 @@
     <title>{% block title %}Slim{% endblock %}</title>
 
     {% block css %}
-        <link rel="stylesheet" href="/assets/front/css/style.css">
+        <link rel="stylesheet" href="{{ base_url() }}/assets/front/css/style.css">
         {% block css_append %}{% endblock %}
     {% endblock %}
 </head>
@@ -17,7 +17,7 @@
 {% block content %}{% endblock %}
 
 {% block js %}
-    <script src="/assets/front/js/scripts.js"></script>
+    <script src="{{ base_url() }}/assets/front/js/scripts.js"></script>
     {% block js_append %}{% endblock %}
 {% endblock %}
 </body>
