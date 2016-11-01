@@ -54,68 +54,6 @@
             "time": "2016-04-18 07:52:43"
         },
         {
-            "name": "aura/session",
-            "version": "2.1.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/auraphp/Aura.Session.git",
-                "reference": "7d2f7d41ad693970b5b6b83facca0961d3378883"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/auraphp/Aura.Session/zipball/7d2f7d41ad693970b5b6b83facca0961d3378883",
-                "reference": "7d2f7d41ad693970b5b6b83facca0961d3378883",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.0"
-            },
-            "require-dev": {
-                "aura/di": "~2.0"
-            },
-            "suggest": {
-                "ext-mcrypt": "Mcrypt generates the next best secure CSRF tokens.",
-                "ext-openssl": "OpenSSL generates the best secure CSRF tokens.",
-                "ircmaxell/random-lib": "A Library For Generating Secure Random Numbers",
-                "paragonie/random_compat": "PHP 5.x polyfill for random_bytes() and random_int() from PHP 7"
-            },
-            "type": "library",
-            "extra": {
-                "aura": {
-                    "type": "library",
-                    "config": {
-                        "common": "Aura\\Session\\_Config\\Common"
-                    }
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Aura\\Session\\": "src/",
-                    "Aura\\Session\\_Config\\": "config/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-2-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Aura.Session Contributors",
-                    "homepage": "https://github.com/auraphp/Aura.Session/contributors"
-                }
-            ],
-            "description": "Provides session management functionality, including lazy session starting, session segments, next-request-only (\"flash\") values, and CSRF tools.",
-            "homepage": "https://github.com/auraphp/Aura.Session",
-            "keywords": [
-                "csrf",
-                "flash",
-                "flash message",
-                "session",
-                "sessions"
-            ],
-            "time": "2016-10-03 20:28:32"
-        },
-        {
             "name": "container-interop/container-interop",
             "version": "1.1.0",
             "source": {
@@ -504,16 +442,16 @@
         },
         {
             "name": "respect/validation",
-            "version": "1.1.9",
+            "version": "1.1.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Respect/Validation.git",
-                "reference": "e457f19dbd27370547ad0409f662d34ebb32e9a9"
+                "reference": "710e807a68aa79b992d85defb60b36a59745ae91"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Respect/Validation/zipball/e457f19dbd27370547ad0409f662d34ebb32e9a9",
-                "reference": "e457f19dbd27370547ad0409f662d34ebb32e9a9",
+                "url": "https://api.github.com/repos/Respect/Validation/zipball/710e807a68aa79b992d85defb60b36a59745ae91",
+                "reference": "710e807a68aa79b992d85defb60b36a59745ae91",
                 "shasum": ""
             },
             "require": {
@@ -565,7 +503,7 @@
                 "validation",
                 "validator"
             ],
-            "time": "2016-09-20 06:44:39"
+            "time": "2016-10-29 13:29:17"
         },
         {
             "name": "slim/csrf",
@@ -798,16 +736,16 @@
         },
         {
             "name": "symfony/var-dumper",
-            "version": "v3.1.5",
+            "version": "v3.1.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/var-dumper.git",
-                "reference": "70bfe927b86ba9999aeebd829715b0bb2cd39a10"
+                "reference": "4dc2f03b480c43f1665d3317d827a04ed6ffd11e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/var-dumper/zipball/70bfe927b86ba9999aeebd829715b0bb2cd39a10",
-                "reference": "70bfe927b86ba9999aeebd829715b0bb2cd39a10",
+                "url": "https://api.github.com/repos/symfony/var-dumper/zipball/4dc2f03b480c43f1665d3317d827a04ed6ffd11e",
+                "reference": "4dc2f03b480c43f1665d3317d827a04ed6ffd11e",
                 "shasum": ""
             },
             "require": {
@@ -857,20 +795,20 @@
                 "debug",
                 "dump"
             ],
-            "time": "2016-09-29 14:13:09"
+            "time": "2016-10-18 15:46:07"
         },
         {
             "name": "twig/twig",
-            "version": "v1.26.1",
+            "version": "v1.27.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/twigphp/Twig.git",
-                "reference": "a09d8ee17ac1cfea29ed60c83960ad685c6a898d"
+                "reference": "3c6c0033fd3b5679c6e1cb60f4f9766c2b424d97"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/Twig/zipball/a09d8ee17ac1cfea29ed60c83960ad685c6a898d",
-                "reference": "a09d8ee17ac1cfea29ed60c83960ad685c6a898d",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/3c6c0033fd3b5679c6e1cb60f4f9766c2b424d97",
+                "reference": "3c6c0033fd3b5679c6e1cb60f4f9766c2b424d97",
                 "shasum": ""
             },
             "require": {
@@ -883,7 +821,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.26-dev"
+                    "dev-master": "1.27-dev"
                 }
             },
             "autoload": {
@@ -918,7 +856,7 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2016-10-05 18:57:41"
+            "time": "2016-10-25 19:17:17"
         },
         {
             "name": "vlucas/phpdotenv",
