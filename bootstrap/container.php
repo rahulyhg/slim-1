@@ -90,5 +90,5 @@ $container['db'] = function () {
 };
 
 $container['IndexController'] = function ($container) {
-    return new \App\Controllers\IndexController($container);
+    return new \App\Controllers\Index($container);
 };
