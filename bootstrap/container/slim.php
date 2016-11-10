@@ -46,8 +46,8 @@ $container['notAllowedHandler'] = function ($container) {
 
 /** @var Slim\Views\Twig */
 $container['view'] = function ($container) {
-    $view = new Slim\Views\Twig(__DIR__ . '/../app/Views/', [
-        'cache' => env('ENV') == 'local' ? false : __DIR__ . '/../tmp/views/',
+    $view = new Slim\Views\Twig(__DIR__ . '/../../app/Views/', [
+        'cache' => env('ENV') == 'local' ? false : __DIR__ . '/../../tmp/views/',
         'debug' => env('DEBUG')
     ]);
 
@@ -56,7 +56,7 @@ $container['view'] = function ($container) {
     $view->addExtension(new Slim\Views\TwigExtension($container->router, $basePath));
     $view->addExtension(new Twig_Extension_Debug);
     $view->addExtension(new App\Slim\TwigExtension);
-    $view->getLoader()->addPath(realpath(__DIR__ . '/../public'));
+    $view->getLoader()->addPath(realpath(__DIR__ . '/../../public'));
 
     return $view;
 };
@@ -65,29 +65,6 @@ $container['view'] = function ($container) {
 $container['logger'] = function () {
     $logger = new Monolog\Logger('slim');
     $logger->pushProcessor(new Monolog\Processor\UidProcessor());
-    $logger->pushHandler(new Monolog\Handler\StreamHandler(__DIR__ . '/../logs/app.log', Monolog\Logger::DEBUG));
+    $logger->pushHandler(new Monolog\Handler\StreamHandler(__DIR__ . '/../../logs/app.log', Monolog\Logger::DEBUG));
     return $logger;
-};
-
-/** @var RKA\Session */
-$container['session'] = function () {
-    return new RKA\Session;
-};
-
-/** @var Slim\Csrf\Guard */
-$container['csrf'] = function () {
-    return new Slim\Csrf\Guard;
-};
-
-/** @var LessQL\Database */
-$container['db'] = function () {
-    $dns = sprintf("%s:dbname=%s;host=%s", env('DB_TYPE'), env('DB_NAME'), env('DB_HOST'));
-    $user = env('DB_USER');
-    $pass = env('DB_PASS');
-    return new LessQL\Database(new PDO($dns, $user, $pass));
-};
-
-/** @var App\Controllers\Index */
-$container['IndexController'] = function ($container) {
-    return new App\Controllers\Index($container);
 };

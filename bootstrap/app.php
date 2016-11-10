@@ -14,7 +14,10 @@ $dotenv->load();
 $app = new \Slim\App();
 $container = $app->getContainer();
 
-require 'container.php';
+require 'container/slim.php';
+require 'container/middlewares.php';
+require 'container/controllers.php';
+require 'container/misc.php';
 require 'middlewares.php';
 require 'routes.php';
 
