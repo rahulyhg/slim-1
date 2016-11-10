@@ -11,7 +11,7 @@ session_start();
 $dotenv = new Dotenv\Dotenv(__DIR__ . '/../');
 $dotenv->load();
 
-$app = new \Slim\App();
+$app = new Slim\App();
 $container = $app->getContainer();
 
 require 'container/slim.php';
