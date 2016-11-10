@@ -12,6 +12,7 @@ $dotenv = new Dotenv\Dotenv(__DIR__ . '/../');
 $dotenv->load();
 
 $app = new \Slim\App();
+$container = $app->getContainer();
 
 require 'container.php';
 require 'middlewares.php';

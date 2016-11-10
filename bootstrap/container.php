@@ -1,6 +1,4 @@
 <?php
-$container = $app->getContainer();
-
 $container['errorHandler'] = function ($container) {
     return function ($request, $response, $exception) use ($container) {
         $message = sprintf(
@@ -89,6 +87,7 @@ $container['db'] = function () {
     return new LessQL\Database(new PDO($dns, $user, $pass));
 };
 
+/** @var App\Controllers\Index */
 $container['IndexController'] = function ($container) {
     return new App\Controllers\Index($container);
 };
