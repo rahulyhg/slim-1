@@ -73,12 +73,12 @@ $container['logger'] = function () {
 
 /** @var RKA\Session */
 $container['session'] = function () {
-    return new \RKA\Session;
+    return new RKA\Session;
 };
 
 /** @var Slim\Csrf\Guard */
 $container['csrf'] = function () {
-    return new \Slim\Csrf\Guard;
+    return new Slim\Csrf\Guard;
 };
 
 /** @var LessQL\Database */
@@ -90,5 +90,5 @@ $container['db'] = function () {
 };
 
 $container['IndexController'] = function ($container) {
-    return new \App\Controllers\Index($container);
+    return new App\Controllers\Index($container);
 };
