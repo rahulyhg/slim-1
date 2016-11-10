@@ -1,7 +1,7 @@
 <?php
 namespace App\Controllers;
 
-class IndexController extends Controller
+class Index extends Controller
 {
     public function __invoke($request, $response, $args)
     {
