@@ -11,3 +11,8 @@ $container['db'] = function () {
 $container['session'] = function () {
     return new RKA\Session;
 };
+
+/** @var Slim\Flash\Messages */
+$container['flash'] = function () {
+    return new Slim\Flash\Messages;
+};
