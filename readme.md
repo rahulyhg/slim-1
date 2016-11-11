@@ -1,6 +1,6 @@
 # Slim Framework skeleton application
 
 ```
-composer create-project -sdev --prefer-dist ivandokov/slim
+composer create-project -n -s dev ivandokov/slim
 ```
 Optionally add project name at the end of the command.  
