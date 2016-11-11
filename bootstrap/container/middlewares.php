@@ -18,3 +18,8 @@ $container['csrf'] = function () {
 $container['csrfViewField'] = function ($container) {
     return new App\Middlewares\CsrfViewField($container);
 };
+
+/** @var App\Middlewares\OldInput */
+$container['oldInput'] = function ($container) {
+    return new App\Middlewares\OldInput($container);
+};
