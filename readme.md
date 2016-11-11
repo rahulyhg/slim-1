@@ -1,9 +1,9 @@
 # Slim Framework skeleton application
 
+Run the following command and add project name at the end:  
 ```
 composer create-project -n -s dev ivandokov/slim 
 ```
-Add project name at the end of the command.  
 
 Additionally you can add bash alias for easier usage next time:  
 ```
