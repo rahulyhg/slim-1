@@ -1,4 +1,6 @@
 <?php
+$container['settings']['displayErrorDetails'] = env('DEBUG', true);
+
 $container['errorHandler'] = function ($container) {
     return function ($request, $response, $exception) use ($container) {
         $message = sprintf(
