@@ -23,9 +23,9 @@ class CsrfViewField extends Middleware
     public function __invoke(RequestInterface $request, ResponseInterface $response, callable $next)
     {
         $nameKey = $this->container->csrf->getTokenNameKey();
-        $nameValue = $request->getAttribute($nameKey);
+        $nameValue = $this->container->csrf->getTokenName();
         $tokenKey = $this->container->csrf->getTokenValueKey();
-        $tokenValue = $request->getAttribute($tokenKey);
+        $tokenValue = $this->container->csrf->getTokenValue();
 
         $this->container->view->getEnvironment()->addGlobal('csrf', [
             'field' => '
