@@ -40,7 +40,7 @@ $container['notAllowedHandler'] = function ($container) {
             ->withHeader('Allow', implode(', ', $methods));
         return $container->view->render($response, 'error.twig', [
             'title' => 'Method not allowed',
-            'message' => "<p>Method must be one of: " . implode(', ', $methods)  ."</p>",
+            'message' => "<p>Method must be one of: " . implode(', ', $methods) . "</p>",
             'code' => $statusCode
         ]);
     };
@@ -67,9 +67,10 @@ $container['view'] = function ($container) {
 
 /** @var Monolog\Logger */
 $container['logger'] = function () {
+    $logFile = __DIR__ . '/../../logs/' . date('Y-m-d') . '.log';
     $logger = new Monolog\Logger('slim');
     $logger->pushProcessor(new Monolog\Processor\UidProcessor());
-    $stream = new Monolog\Handler\StreamHandler(__DIR__ . '/../../logs/app.log', Monolog\Logger::DEBUG);
+    $stream = new Monolog\Handler\StreamHandler($logFile, Monolog\Logger::DEBUG);
     $stream->setFormatter(new \Monolog\Formatter\LineFormatter(null, null, true, true));
     $logger->pushHandler($stream);
     return $logger;
