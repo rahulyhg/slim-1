@@ -1,3 +1,3 @@
 <?php
 
-$app->get('/', 'IndexController:index')->setName('index');
+$app->get('/', App\Controllers\Index::class . ':index')->setName('index');

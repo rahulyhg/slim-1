@@ -48,8 +48,8 @@ $container['notAllowedHandler'] = function ($container) {
 
 /** @var Slim\Views\Twig */
 $container['view'] = function ($container) {
-    $view = new Slim\Views\Twig(__DIR__ . '/../../app/Views/', [
-        'cache' => env('ENV') == 'local' ? false : __DIR__ . '/../../tmp/views/',
+    $view = new Slim\Views\Twig(__DIR__ . '/../app/Views/', [
+        'cache' => env('ENV') == 'local' ? false : __DIR__ . '/../tmp/views/',
         'debug' => env('DEBUG')
     ]);
 
@@ -58,7 +58,7 @@ $container['view'] = function ($container) {
     $view->addExtension(new Slim\Views\TwigExtension($container->router, $basePath));
     $view->addExtension(new Twig_Extension_Debug);
     $view->addExtension(new App\Slim\TwigExtension);
-    $view->getLoader()->addPath(realpath(__DIR__ . '/../../public'));
+    $view->getLoader()->addPath(realpath(__DIR__ . '/../public'));
 
     $view->getEnvironment()->addGlobal('flash', $container->flash);
 
@@ -67,11 +67,54 @@ $container['view'] = function ($container) {
 
 /** @var Monolog\Logger */
 $container['logger'] = function () {
-    $logFile = __DIR__ . '/../../logs/' . date('Y-m-d') . '.log';
+    $logFile = __DIR__ . '/../logs/' . date('Y-m-d') . '.log';
     $logger = new Monolog\Logger('slim');
     $logger->pushProcessor(new Monolog\Processor\UidProcessor());
     $stream = new Monolog\Handler\StreamHandler($logFile, Monolog\Logger::DEBUG);
     $stream->setFormatter(new \Monolog\Formatter\LineFormatter(null, null, true, true));
     $logger->pushHandler($stream);
     return $logger;
+};
+
+/** @var App\Middlewares\RemoveTrailingSlash */
+$container['removeTrailingSlash'] = function ($container) {
+    return new App\Middlewares\RemoveTrailingSlash($container);
+};
+
+/** @var RKA\SessionMiddleware */
+$container['sessionMiddleware'] = function ($container) {
+    return new RKA\SessionMiddleware(['name' => 'session']);
+};
+
+/** @var Slim\Csrf\Guard */
+$container['csrf'] = function () {
+    return new Slim\Csrf\Guard;
+};
+
+/** @var App\Middlewares\CsrfViewField */
+$container['csrfViewField'] = function ($container) {
+    return new App\Middlewares\CsrfViewField($container);
+};
+
+/** @var App\Middlewares\OldInput */
+$container['oldInput'] = function ($container) {
+    return new App\Middlewares\OldInput($container);
+};
+
+/** @var LessQL\Database */
+$container['db'] = function () {
+    $dns = sprintf("%s:dbname=%s;host=%s", env('DB_TYPE'), env('DB_NAME'), env('DB_HOST'));
+    $user = env('DB_USER');
+    $pass = env('DB_PASS');
+    return new LessQL\Database(new PDO($dns, $user, $pass));
+};
+
+/** @var RKA\Session */
+$container['session'] = function () {
+    return new RKA\Session;
+};
+
+/** @var Slim\Flash\Messages */
+$container['flash'] = function () {
+    return new Slim\Flash\Messages;
 };
