@@ -69,6 +69,8 @@ $container['view'] = function ($container) {
 $container['logger'] = function () {
     $logger = new Monolog\Logger('slim');
     $logger->pushProcessor(new Monolog\Processor\UidProcessor());
-    $logger->pushHandler(new Monolog\Handler\StreamHandler(__DIR__ . '/../../logs/app.log', Monolog\Logger::DEBUG));
+    $stream = new Monolog\Handler\StreamHandler(__DIR__ . '/../../logs/app.log', Monolog\Logger::DEBUG);
+    $stream->setFormatter(new \Monolog\Formatter\LineFormatter(null, null, true, true));
+    $logger->pushHandler($stream);
     return $logger;
 };
