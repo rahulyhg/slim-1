@@ -22,6 +22,10 @@ class CsrfViewField extends Middleware
      */
     public function __invoke(RequestInterface $request, ResponseInterface $response, callable $next)
     {
+        if (!isset($this->container->csrf)) {
+            return $next($request, $response);
+        }
+
         $nameKey = $this->container->csrf->getTokenNameKey();
         $nameValue = $this->container->csrf->getTokenName();
         $tokenKey = $this->container->csrf->getTokenValueKey();
