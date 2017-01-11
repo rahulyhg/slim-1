@@ -4,8 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "3122937440fce885525298720b4e160a",
-    "content-hash": "b1d0546dc65288500fd8415ddf32723b",
+    "content-hash": "9198f748a3b06e2f69acad332b4ff466",
     "packages": [
         {
             "name": "akrabat/rka-slim-session-middleware",
@@ -51,7 +50,7 @@
                 "session",
                 "slim"
             ],
-            "time": "2016-04-18 07:52:43"
+            "time": "2016-04-18T07:52:43+00:00"
         },
         {
             "name": "container-interop/container-interop",
@@ -78,7 +77,7 @@
                 "MIT"
             ],
             "description": "Promoting the interoperability of container objects (DIC, SL, etc.)",
-            "time": "2014-12-30 15:22:37"
+            "time": "2014-12-30T15:22:37+00:00"
         },
         {
             "name": "monolog/monolog",
@@ -156,68 +155,20 @@
                 "logging",
                 "psr-3"
             ],
-            "time": "2016-11-26 00:15:39"
-        },
-        {
-            "name": "morris/lessql",
-            "version": "v0.3.4",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/morris/lessql.git",
-                "reference": "ff6c631e3abf1d3ee618f5262be4cc6ed09f6957"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/morris/lessql/zipball/ff6c631e3abf1d3ee618f5262be4cc6ed09f6957",
-                "reference": "ff6c631e3abf1d3ee618f5262be4cc6ed09f6957",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.4"
-            },
-            "require-dev": {
-                "codeclimate/php-test-reporter": "dev-master",
-                "phpunit/phpunit": "~4.6"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Morris Brodersen",
-                    "homepage": "http://morrisbrodersen.de"
-                }
-            ],
-            "description": "LessQL: The agile PHP ORM alternative",
-            "homepage": "http://github.com/morris/lessql",
-            "keywords": [
-                "database",
-                "notorm",
-                "orm",
-                "pdo",
-                "sql"
-            ],
-            "time": "2016-07-06 15:10:11"
+            "time": "2016-11-26T00:15:39+00:00"
         },
         {
             "name": "nikic/fast-route",
-            "version": "v1.0.1",
+            "version": "v1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nikic/FastRoute.git",
-                "reference": "8ea928195fa9b907f0d6e48312d323c1a13cc2af"
+                "reference": "f3dcf5130e634b6123d40727d612ec6aa4f61fb3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nikic/FastRoute/zipball/8ea928195fa9b907f0d6e48312d323c1a13cc2af",
-                "reference": "8ea928195fa9b907f0d6e48312d323c1a13cc2af",
+                "url": "https://api.github.com/repos/nikic/FastRoute/zipball/f3dcf5130e634b6123d40727d612ec6aa4f61fb3",
+                "reference": "f3dcf5130e634b6123d40727d612ec6aa4f61fb3",
                 "shasum": ""
             },
             "require": {
@@ -247,7 +198,7 @@
                 "router",
                 "routing"
             ],
-            "time": "2016-06-12 19:08:51"
+            "time": "2016-10-20T17:36:47+00:00"
         },
         {
             "name": "paragonie/random_compat",
@@ -295,7 +246,7 @@
                 "pseudorandom",
                 "random"
             ],
-            "time": "2016-11-07 23:38:38"
+            "time": "2016-11-07T23:38:38+00:00"
         },
         {
             "name": "pimple/pimple",
@@ -341,7 +292,7 @@
                 "container",
                 "dependency injection"
             ],
-            "time": "2015-09-11 15:10:35"
+            "time": "2015-09-11T15:10:35+00:00"
         },
         {
             "name": "psr/http-message",
@@ -391,7 +342,7 @@
                 "request",
                 "response"
             ],
-            "time": "2016-08-06 14:39:51"
+            "time": "2016-08-06T14:39:51+00:00"
         },
         {
             "name": "psr/log",
@@ -438,7 +389,7 @@
                 "psr",
                 "psr-3"
             ],
-            "time": "2016-10-10 12:19:37"
+            "time": "2016-10-10T12:19:37+00:00"
         },
         {
             "name": "respect/validation",
@@ -503,7 +454,7 @@
                 "validation",
                 "validator"
             ],
-            "time": "2016-10-29 13:29:17"
+            "time": "2016-10-29T13:29:17+00:00"
         },
         {
             "name": "slim/csrf",
@@ -553,7 +504,7 @@
                 "middleware",
                 "slim"
             ],
-            "time": "2016-12-20 20:45:43"
+            "time": "2016-12-20T20:45:43+00:00"
         },
         {
             "name": "slim/flash",
@@ -598,7 +549,7 @@
                 "provider",
                 "slim"
             ],
-            "time": "2015-08-16 22:49:06"
+            "time": "2015-08-16T22:49:06+00:00"
         },
         {
             "name": "slim/slim",
@@ -668,7 +619,7 @@
                 "micro",
                 "router"
             ],
-            "time": "2016-12-20 20:30:47"
+            "time": "2016-12-20T20:30:47+00:00"
         },
         {
             "name": "slim/twig-view",
@@ -718,7 +669,7 @@
                 "twig",
                 "view"
             ],
-            "time": "2016-03-13 20:58:41"
+            "time": "2016-03-13T20:58:41+00:00"
         },
         {
             "name": "symfony/polyfill-mbstring",
@@ -777,7 +728,7 @@
                 "portable",
                 "shim"
             ],
-            "time": "2016-11-14 01:06:16"
+            "time": "2016-11-14T01:06:16+00:00"
         },
         {
             "name": "symfony/var-dumper",
@@ -840,20 +791,20 @@
                 "debug",
                 "dump"
             ],
-            "time": "2016-12-11 14:34:22"
+            "time": "2016-12-11T14:34:22+00:00"
         },
         {
             "name": "twig/twig",
-            "version": "v1.29.0",
+            "version": "v1.30.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/twigphp/Twig.git",
-                "reference": "74f723e542368ca2080b252740be5f1113ebb898"
+                "reference": "c6ff71094fde15d12398eaba029434b013dc5e59"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/Twig/zipball/74f723e542368ca2080b252740be5f1113ebb898",
-                "reference": "74f723e542368ca2080b252740be5f1113ebb898",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/c6ff71094fde15d12398eaba029434b013dc5e59",
+                "reference": "c6ff71094fde15d12398eaba029434b013dc5e59",
                 "shasum": ""
             },
             "require": {
@@ -866,7 +817,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.29-dev"
+                    "dev-master": "1.30-dev"
                 }
             },
             "autoload": {
@@ -901,7 +852,7 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2016-12-13 17:28:18"
+            "time": "2016-12-23T11:06:22+00:00"
         },
         {
             "name": "vlucas/phpdotenv",
@@ -951,7 +902,7 @@
                 "env",
                 "environment"
             ],
-            "time": "2016-09-01 10:05:43"
+            "time": "2016-09-01T10:05:43+00:00"
         }
     ],
     "packages-dev": [],
