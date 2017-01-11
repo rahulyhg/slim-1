@@ -58,7 +58,6 @@ $container['view'] = function ($container) {
     $view->addExtension(new Slim\Views\TwigExtension($container->router, $basePath));
     $view->addExtension(new Twig_Extension_Debug);
     $view->addExtension(new App\Slim\TwigExtension);
-    $view->getLoader()->addPath(realpath(__DIR__ . '/../public'));
 
     if (isset($container->flash)) {
         $view->getEnvironment()->addGlobal('flash', $container->flash);
