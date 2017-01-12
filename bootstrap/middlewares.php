@@ -4,8 +4,8 @@
  * http://www.slimframework.com/docs/concepts/middleware.html
  */
 
-$app->add($container->oldInput);
-$app->add($container->csrfViewField);
+$app->add(new App\Middlewares\OldInput($container));
+$app->add(new App\Middlewares\CsrfViewField($container));
 $app->add($container->csrf);
-$app->add($container->sessionMiddleware);
-$app->add($container->removeTrailingSlash);
+$app->add(new RKA\SessionMiddleware(['name' => 'session']));
+$app->add(new App\Middlewares\RemoveTrailingSlash($container));
