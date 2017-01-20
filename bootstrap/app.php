@@ -1,8 +1,14 @@
 <?php
-require __DIR__ . '/../vendor/autoload.php';
+if (file_exists(__DIR__ . '/../vendor/autoload.php')) {
+    require __DIR__ . '/../vendor/autoload.php';
+} else {
+    die('Missing vendor. You should run "composer install"');
+}
 
-$dotenv = new Dotenv\Dotenv(__DIR__ . '/../');
-$dotenv->load();
+try {
+    $dotenv = new Dotenv\Dotenv(__DIR__ . '/../');
+    $dotenv->load();
+} catch(Exception $e) {}
 
 $app = new Slim\App();
 $container = $app->getContainer();
