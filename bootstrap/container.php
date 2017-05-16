@@ -1,6 +1,8 @@
 <?php
 $container['settings']['displayErrorDetails'] = env('DEBUG', true);
+$logFile = __DIR__ . '/../logs/' . date('Y-m-d') . '.log';
 ini_set('display_errors', env('DEBUG', true));
+ini_set('error_log', $logFile);
 
 $container['errorHandler'] = function ($container) {
     return function ($request, $response, $exception) use ($container) {
@@ -66,8 +68,7 @@ $container['view'] = function ($container) {
     return $view;
 };
 
-$container['logger'] = function () {
-    $logFile = __DIR__ . '/../logs/' . date('Y-m-d') . '.log';
+$container['logger'] = function () use($logFile) {
     $logger = new Monolog\Logger('slim');
     $logger->pushProcessor(new Monolog\Processor\UidProcessor());
     $stream = new Monolog\Handler\StreamHandler($logFile, Monolog\Logger::DEBUG);
